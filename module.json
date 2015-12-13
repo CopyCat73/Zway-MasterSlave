@@ -1,0 +1,74 @@
+{
+   "author" : "CopyCat73",
+   "category" : "basic_gateway_modules",
+   "defaults" : {
+      "description" : "__description__",
+      "title" : "__title__"
+   },
+   "dependencies" : [],
+   "homepage" : "https://github.com/CopyCat73",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "MasterSlave",
+   "options" : {
+      "fields" : {
+         "master" : {
+            "datasource" : "namespaces",
+            "field" : "optionLabels",
+            "label" : "__selectmasterdevice__",
+            "optionLabels" : "namespaces:devices_switchBinary:deviceName",
+            "type" : "select",
+            "order" : 1
+         },
+         "slaves" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_switchBinary:deviceName",
+                        "type" : "select"
+                     }
+                  }
+               }
+            },
+            "label" : "__selectslavedevices__",
+            "order" : 2
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/CopyCat73/Zway-MasterSlave",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "master" : {
+            "datasource" : "namespaces",
+            "enum" : "namespaces:devices_switchBinary:deviceId",
+            "field" : "enum",
+            "required" : true
+         },
+         "slaves" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_switchBinary:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  }                 
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         }       
+      },
+      "required" : true,
+      "type" : "object"
+   },
+   "singleton" : true,
+   "version" : "1.00"
+}

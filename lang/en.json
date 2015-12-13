@@ -1,0 +1,6 @@
+{
+  "title": "MasterSlave",
+  "description": "Switch one or more slave lights based on master light.",
+  "selectmasterdevice": "Select master device",
+  "selectslavedevices": "Select slave devices to switch"
+ }
